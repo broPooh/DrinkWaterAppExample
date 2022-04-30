@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,11 +19,17 @@
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                         <navigationBarAppearance key="standardAppearance">
                             <color key="backgroundColor" red="0.0" green="0.59135961530000003" blue="0.43599325420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </navigationBarAppearance>
                         <navigationBarAppearance key="scrollEdgeAppearance">
                             <color key="backgroundColor" red="0.0" green="0.59135961530000003" blue="0.43599325420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <textAttributes key="titleTextAttributes">
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </textAttributes>
                         </navigationBarAppearance>
                     </navigationBar>
                     <connections>
@@ -42,8 +47,85 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="잘하셨어요!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcw-zt-gQU">
+                                <rect key="frame" x="20" y="138" width="110.5" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘 마신 양은" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZlO-QX-gAn">
+                                <rect key="frame" x="20" y="171" width="135.5" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1200ml" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O93-mg-hI3">
+                                <rect key="frame" x="20" y="204" width="114.5" height="38.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="목표의 30%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uso-SC-Ykk">
+                                <rect key="frame" x="20" y="246.5" width="84.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1-1" translatesAutoresizingMaskIntoConstraints="NO" id="9ob-nc-pId">
+                                <rect key="frame" x="87" y="328" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="GQH-cg-fLh"/>
+                                    <constraint firstAttribute="width" secondItem="9ob-nc-pId" secondAttribute="height" multiplier="1:1" id="OON-kh-dVD"/>
+                                    <constraint firstAttribute="width" constant="240" id="TfG-C3-y06"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500ml" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tr1-8x-GmC">
+                                <rect key="frame" x="171.5" y="588" width="71.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sos-Gj-jOH">
+                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="RlZ-pg-KGc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="물 마시기">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕하세요님의 하루 물 권장 섭취량은 2.1L 입니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgp-Ra-HJN">
+                                <rect key="frame" x="65.5" y="785" width="283" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.0" green="0.59135961530000003" blue="0.43599325420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="O93-mg-hI3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6EZ-qe-4kR"/>
+                            <constraint firstItem="zcw-zt-gQU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6tv-Bc-McE"/>
+                            <constraint firstItem="9ob-nc-pId" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7go-0j-owN"/>
+                            <constraint firstItem="ZlO-QX-gAn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="9rV-ys-d36"/>
+                            <constraint firstItem="9ob-nc-pId" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GWd-1t-l7Y"/>
+                            <constraint firstItem="Tr1-8x-GmC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="N9y-F0-Nki"/>
+                            <constraint firstItem="bgp-Ra-HJN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V5Q-6i-Oon"/>
+                            <constraint firstItem="sos-Gj-jOH" firstAttribute="top" secondItem="bgp-Ra-HJN" secondAttribute="bottom" constant="10" id="WaC-i9-IaQ"/>
+                            <constraint firstItem="uso-SC-Ykk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="aQP-TV-UdF"/>
+                            <constraint firstItem="sos-Gj-jOH" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="amS-bR-g99"/>
+                            <constraint firstItem="Tr1-8x-GmC" firstAttribute="top" secondItem="9ob-nc-pId" secondAttribute="bottom" constant="20" id="dKi-jl-27N"/>
+                            <constraint firstItem="O93-mg-hI3" firstAttribute="top" secondItem="ZlO-QX-gAn" secondAttribute="bottom" constant="4" id="jRv-cu-xiP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sos-Gj-jOH" secondAttribute="trailing" id="onC-NZ-st3"/>
+                            <constraint firstItem="zcw-zt-gQU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="tat-ff-8td"/>
+                            <constraint firstItem="sos-Gj-jOH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="twJ-l6-yvU"/>
+                            <constraint firstItem="uso-SC-Ykk" firstAttribute="top" secondItem="O93-mg-hI3" secondAttribute="bottom" constant="4" id="uwl-Uf-W1S"/>
+                            <constraint firstItem="ZlO-QX-gAn" firstAttribute="top" secondItem="zcw-zt-gQU" secondAttribute="bottom" constant="4" id="vc2-Wo-dFL"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="물 마시기" id="iQA-z4-gNG">
                         <barButtonItem key="leftBarButtonItem" title="refresh" image="arrow.clockwise" catalog="system" id="duK-Qy-adq">
@@ -59,7 +141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="786" y="-541"/>
+            <point key="canvasLocation" x="785.50724637681162" y="-541.07142857142856"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="tnk-d6-lV5">
@@ -69,7 +151,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="AuQ-Tm-cnf"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.0" green="0.59135961530000003" blue="0.43599325420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="TQG-ZB-F9M">
                         <barButtonItem key="rightBarButtonItem" title="저장" id="a6V-gT-gFW"/>
@@ -81,10 +163,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="1-1" width="152" height="151"/>
         <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
         <image name="person.crop.circle" catalog="system" width="128" height="121"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
