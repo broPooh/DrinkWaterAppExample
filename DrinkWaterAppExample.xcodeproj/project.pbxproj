@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1BD1582E281D9BDE00DD05CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD1582D281D9BDE00DD05CB /* AppDelegate.swift */; };
 		1BD15830281D9BDE00DD05CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD1582F281D9BDE00DD05CB /* SceneDelegate.swift */; };
-		1BD15832281D9BDE00DD05CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD15831281D9BDE00DD05CB /* ViewController.swift */; };
 		1BD15835281D9BDE00DD05CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BD15833281D9BDE00DD05CB /* Main.storyboard */; };
 		1BD15837281D9BDF00DD05CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BD15836281D9BDF00DD05CB /* Assets.xcassets */; };
 		1BD1583A281D9BDF00DD05CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BD15838281D9BDF00DD05CB /* LaunchScreen.storyboard */; };
@@ -18,6 +17,7 @@
 		1BD15851281D9BE000DD05CB /* DrinkWaterAppExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD15850281D9BE000DD05CB /* DrinkWaterAppExampleUITestsLaunchTests.swift */; };
 		1BD1585F281D9C1800DD05CB /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 1BD1585E281D9C1800DD05CB /* TextFieldEffects */; };
 		1BD15862281D9C2400DD05CB /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1BD15861281D9C2400DD05CB /* IQKeyboardManagerSwift */; };
+		1BD15864281D9C6700DD05CB /* DrinkWaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD15863281D9C6700DD05CB /* DrinkWaterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +41,6 @@
 		1BD1582A281D9BDE00DD05CB /* DrinkWaterAppExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkWaterAppExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BD1582D281D9BDE00DD05CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BD1582F281D9BDE00DD05CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1BD15831281D9BDE00DD05CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1BD15834281D9BDE00DD05CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1BD15836281D9BDF00DD05CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1BD15839281D9BDF00DD05CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +50,7 @@
 		1BD1584A281D9BE000DD05CB /* DrinkWaterAppExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrinkWaterAppExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BD1584E281D9BE000DD05CB /* DrinkWaterAppExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkWaterAppExampleUITests.swift; sourceTree = "<group>"; };
 		1BD15850281D9BE000DD05CB /* DrinkWaterAppExampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkWaterAppExampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1BD15863281D9C6700DD05CB /* DrinkWaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkWaterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +105,8 @@
 			children = (
 				1BD1582D281D9BDE00DD05CB /* AppDelegate.swift */,
 				1BD1582F281D9BDE00DD05CB /* SceneDelegate.swift */,
-				1BD15831281D9BDE00DD05CB /* ViewController.swift */,
 				1BD15833281D9BDE00DD05CB /* Main.storyboard */,
+				1BD15863281D9C6700DD05CB /* DrinkWaterViewController.swift */,
 				1BD15836281D9BDF00DD05CB /* Assets.xcassets */,
 				1BD15838281D9BDF00DD05CB /* LaunchScreen.storyboard */,
 				1BD1583B281D9BDF00DD05CB /* Info.plist */,
@@ -270,9 +270,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BD15832281D9BDE00DD05CB /* ViewController.swift in Sources */,
 				1BD1582E281D9BDE00DD05CB /* AppDelegate.swift in Sources */,
 				1BD15830281D9BDE00DD05CB /* SceneDelegate.swift in Sources */,
+				1BD15864281D9C6700DD05CB /* DrinkWaterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
