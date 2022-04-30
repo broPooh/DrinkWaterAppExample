@@ -15,10 +15,10 @@
 		1BD15845281D9BE000DD05CB /* DrinkWaterAppExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD15844281D9BE000DD05CB /* DrinkWaterAppExampleTests.swift */; };
 		1BD1584F281D9BE000DD05CB /* DrinkWaterAppExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD1584E281D9BE000DD05CB /* DrinkWaterAppExampleUITests.swift */; };
 		1BD15851281D9BE000DD05CB /* DrinkWaterAppExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD15850281D9BE000DD05CB /* DrinkWaterAppExampleUITestsLaunchTests.swift */; };
-		1BD1585F281D9C1800DD05CB /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 1BD1585E281D9C1800DD05CB /* TextFieldEffects */; };
 		1BD15862281D9C2400DD05CB /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1BD15861281D9C2400DD05CB /* IQKeyboardManagerSwift */; };
 		1BD15864281D9C6700DD05CB /* DrinkWaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD15863281D9C6700DD05CB /* DrinkWaterViewController.swift */; };
 		1BD15866281D9EC400DD05CB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD15865281D9EC400DD05CB /* ProfileViewController.swift */; };
+		1BD1586C281DAB5200DD05CB /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 1BD1586B281DAB5200DD05CB /* TextFieldEffects */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,8 +60,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BD1585F281D9C1800DD05CB /* TextFieldEffects in Frameworks */,
 				1BD15862281D9C2400DD05CB /* IQKeyboardManagerSwift in Frameworks */,
+				1BD1586C281DAB5200DD05CB /* TextFieldEffects in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,8 +151,8 @@
 			);
 			name = DrinkWaterAppExample;
 			packageProductDependencies = (
-				1BD1585E281D9C1800DD05CB /* TextFieldEffects */,
 				1BD15861281D9C2400DD05CB /* IQKeyboardManagerSwift */,
+				1BD1586B281DAB5200DD05CB /* TextFieldEffects */,
 			);
 			productName = DrinkWaterAppExample;
 			productReference = 1BD1582A281D9BDE00DD05CB /* DrinkWaterAppExample.app */;
@@ -227,8 +227,8 @@
 			);
 			mainGroup = 1BD15821281D9BDE00DD05CB;
 			packageReferences = (
-				1BD1585D281D9C1800DD05CB /* XCRemoteSwiftPackageReference "TextFieldEffects" */,
 				1BD15860281D9C2400DD05CB /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				1BD1586A281DAB5200DD05CB /* XCRemoteSwiftPackageReference "TextFieldEffects" */,
 			);
 			productRefGroup = 1BD1582B281D9BDE00DD05CB /* Products */;
 			projectDirPath = "";
@@ -614,14 +614,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1BD1585D281D9C1800DD05CB /* XCRemoteSwiftPackageReference "TextFieldEffects" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/raulriera/TextFieldEffects.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		1BD15860281D9C2400DD05CB /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
@@ -630,18 +622,27 @@
 				kind = branch;
 			};
 		};
+		1BD1586A281DAB5200DD05CB /* XCRemoteSwiftPackageReference "TextFieldEffects" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/raulriera/TextFieldEffects.git";
+			requirement = {
+				kind = versionRange;
+				maximumVersion = 2.0.0;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1BD1585E281D9C1800DD05CB /* TextFieldEffects */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1BD1585D281D9C1800DD05CB /* XCRemoteSwiftPackageReference "TextFieldEffects" */;
-			productName = TextFieldEffects;
-		};
 		1BD15861281D9C2400DD05CB /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1BD15860281D9C2400DD05CB /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
+		};
+		1BD1586B281DAB5200DD05CB /* TextFieldEffects */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1BD1586A281DAB5200DD05CB /* XCRemoteSwiftPackageReference "TextFieldEffects" */;
+			productName = TextFieldEffects;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

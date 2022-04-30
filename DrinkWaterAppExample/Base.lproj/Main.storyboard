@@ -146,24 +146,128 @@
         <!--Profile View Controller-->
         <scene sceneID="tnk-d6-lV5">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xsj-rC-Qi4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="34W-fp-tgp" customClass="ProfileViewController" customModule="DrinkWaterAppExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ev2-mz-mB6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1-4" translatesAutoresizingMaskIntoConstraints="NO" id="cyR-f1-IoD">
+                                <rect key="frame" x="127" y="108" width="160" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="t2L-KQ-bGE"/>
+                                    <constraint firstAttribute="width" constant="160" id="ue2-Ed-MWf"/>
+                                    <constraint firstAttribute="width" secondItem="cyR-f1-IoD" secondAttribute="height" multiplier="1:1" id="zXL-L5-YoD"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="닉네임을 입력해주세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JKq-oU-V7W" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                <rect key="frame" x="40" y="318" width="334" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="8RZ-QQ-kY0"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" red="0.91850298643112183" green="0.79987829923629761" blue="0.2482990026473999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="키(cm)를 설정해주세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AbR-HE-0HK" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                <rect key="frame" x="40" y="388" width="334" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="9cT-rm-8Ej"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" red="0.91850298643112183" green="0.79987829923629761" blue="0.2482990026473999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="몸무게(kg)를 설정해주세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ED-MZ-t8A" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                <rect key="frame" x="40" y="458" width="334" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bDE-Lh-Ucg"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" red="0.91850298643112183" green="0.79987829923629761" blue="0.2482990026473999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="AuQ-Tm-cnf"/>
                         <color key="backgroundColor" red="0.0" green="0.59135961530000003" blue="0.43599325420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="JKq-oU-V7W" firstAttribute="leading" secondItem="AuQ-Tm-cnf" secondAttribute="leading" constant="40" id="59U-HY-oXS"/>
+                            <constraint firstItem="AuQ-Tm-cnf" firstAttribute="trailing" secondItem="2ED-MZ-t8A" secondAttribute="trailing" constant="40" id="9ja-Vt-uEn"/>
+                            <constraint firstItem="cyR-f1-IoD" firstAttribute="centerX" secondItem="ev2-mz-mB6" secondAttribute="centerX" id="KHF-9H-wKz"/>
+                            <constraint firstItem="cyR-f1-IoD" firstAttribute="top" secondItem="AuQ-Tm-cnf" secondAttribute="top" constant="20" id="Mek-1R-nKs"/>
+                            <constraint firstItem="AbR-HE-0HK" firstAttribute="leading" secondItem="AuQ-Tm-cnf" secondAttribute="leading" constant="40" id="Nmr-Sq-d7M"/>
+                            <constraint firstItem="2ED-MZ-t8A" firstAttribute="top" secondItem="AbR-HE-0HK" secondAttribute="bottom" constant="20" id="XOI-br-Fqg"/>
+                            <constraint firstItem="AuQ-Tm-cnf" firstAttribute="trailing" secondItem="JKq-oU-V7W" secondAttribute="trailing" constant="40" id="h9W-ee-Zgy"/>
+                            <constraint firstItem="AbR-HE-0HK" firstAttribute="top" secondItem="JKq-oU-V7W" secondAttribute="bottom" constant="20" id="ixY-pW-BDG"/>
+                            <constraint firstItem="2ED-MZ-t8A" firstAttribute="leading" secondItem="AuQ-Tm-cnf" secondAttribute="leading" constant="40" id="sQ3-eW-CQ4"/>
+                            <constraint firstItem="JKq-oU-V7W" firstAttribute="top" secondItem="cyR-f1-IoD" secondAttribute="bottom" constant="50" id="xWo-LC-mgH"/>
+                            <constraint firstItem="AuQ-Tm-cnf" firstAttribute="trailing" secondItem="AbR-HE-0HK" secondAttribute="trailing" constant="40" id="zZ0-2e-nCQ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="TQG-ZB-F9M">
                         <barButtonItem key="rightBarButtonItem" title="저장" id="a6V-gT-gFW"/>
                     </navigationItem>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Xsj-rC-Qi4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1638" y="-541"/>
+            <point key="canvasLocation" x="1637.68115942029" y="-541.07142857142856"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="2ED-MZ-t8A">
+            <size key="intrinsicContentSize" width="182" height="22"/>
+        </designable>
+        <designable name="AbR-HE-0HK">
+            <size key="intrinsicContentSize" width="157.5" height="22"/>
+        </designable>
+        <designable name="JKq-oU-V7W">
+            <size key="intrinsicContentSize" width="151.5" height="22"/>
+        </designable>
+    </designables>
     <resources>
         <image name="1-1" width="152" height="151"/>
+        <image name="1-4" width="152" height="151"/>
         <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
         <image name="person.crop.circle" catalog="system" width="128" height="121"/>
     </resources>
