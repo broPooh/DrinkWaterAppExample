@@ -110,7 +110,6 @@ class DrinkWaterViewController: UIViewController {
     }
     
     func setButtonConfig(_ button : UIButton, _ text : String, _ textColor : UIColor, _ font : UIFont) {
-        
         button.setTitle(text, for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.titleLabel?.font = font
@@ -120,7 +119,6 @@ class DrinkWaterViewController: UIViewController {
         textField.keyboardType = UIKeyboardType.numberPad
         textField.attributedPlaceholder = placeHolder
         textField.textColor = textColor
-        
     }
     
     
@@ -191,9 +189,15 @@ class DrinkWaterViewController: UIViewController {
          Int(checkString) != nil && Int(checkString)! > 0 ? true : false
     }
     
+    func checkInputUserInfo() -> Bool {
+        (userDefault.string(forKey: "nickName") != nil && userDefault.integer(forKey: "height") != 0 && userDefault.integer(forKey: "weight") != 0 && userDefault.double(forKey: "recommendAmount") != 0.0)
+    }
+    
         
     @IBAction func saveBtnClicked(_ sender: UIButton) {
         if !checkStringToNumber(drinkWaterTextField.text ?? "") {showCheckNotiAlert(title: "숫자를 입력하세요!", message: "마신 물의 양은 숫자만 입력 가능합니다!😱"); return}
+        
+        if !checkInputUserInfo() { showCheckNotiAlert(title: "정보 입력!", message: "권장량 계산을 위해 정보부터 입력해주세요!"); return}
         
         let userInputDrink = Int(drinkWaterTextField.text!)!
         let drinkenWater = userDefault.integer(forKey: "drinkenWater")
@@ -224,19 +228,25 @@ class DrinkWaterViewController: UIViewController {
     
     //마지막 시간을 저장
     func saveLastTime() {
-        let now = dateToStringFormat.string(from: Date())
-        let finalTime = UserDefaults.standard.string(forKey: "finalTime") ?? now
+        //let now = dateToStringFormat.string(from: Date())
+        //let now = Date().dateToString()
+        //let finalTime = UserDefaults.standard.string(forKey: "finalTime") ?? now
+        let now = Date()
+        let finalTime = UserDefaults.standard.string(forKey: "finalTime")?.stringToDate() ?? now
         
-        if now > finalTime { UserDefaults.standard.set(now, forKey: "finalTime") }
+        
+        if now > finalTime { UserDefaults.standard.set(now.dateToString(), forKey: "finalTime") }
     }
     
     
     func checkTodayStart() {
-        let now = dateToStringFormat.string(from: Date())
+        
+        
+        let now = Date().dateToString()
         let finalTime = UserDefaults.standard.string(forKey: "finalTime") ?? now
         
-        let nowToDate = dateToStringFormat.date(from: now)!
-        let finalTimeToDate = dateToStringFormat.date(from: finalTime)!
+        let nowToDate = now.stringToDate()!
+        let finalTimeToDate = finalTime.stringToDate()!
         
         if nowToDate > finalTimeToDate {
             userDefault.removeObject(forKey: "drinkenWater")
@@ -246,5 +256,23 @@ class DrinkWaterViewController: UIViewController {
     @IBAction func drinkTextFieldEditBeginning(_ sender: UITextField) {
         let position = sender.endOfDocument
         sender.selectedTextRange = sender.textRange(from:position, to:position)
+    }
+}
+
+
+extension String {
+    func stringToDate() -> Date? {
+        let dateToStringFormat = DateFormatter()
+        dateToStringFormat.dateFormat = "yyyy:MM:dd"
+        return dateToStringFormat.date(from: self)
+    }
+}
+
+extension Date {
+    
+    func dateToString() -> String {
+        let dateToStringFormat = DateFormatter()
+        dateToStringFormat.dateFormat = "yyyy:MM:dd"
+        return dateToStringFormat.string(from: self)
     }
 }

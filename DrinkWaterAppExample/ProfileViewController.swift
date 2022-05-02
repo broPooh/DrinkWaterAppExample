@@ -129,6 +129,7 @@ class ProfileViewController: UIViewController {
     
     
     @IBAction func saveBtnItemClicked(_ sender: UIBarButtonItem) {
+        view.endEditing(true)
         saveUserInfo()
         
     }
