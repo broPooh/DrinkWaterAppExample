@@ -31,6 +31,17 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
 
         initUIConfig()
+        initInfo()
+    }
+    
+    func initInfo() {
+        let nickName = userDefault.string(forKey: "nickName") ?? ""
+        let height = userDefault.string(forKey: "height") ?? ""
+        let weight = userDefault.string(forKey: "weight") ?? ""
+        
+        nickNameTextField.text = nickName
+        heightTextField.text = height
+        weightTextField.text = weight
     }
     
     func initUIConfig() {
@@ -95,15 +106,15 @@ class ProfileViewController: UIViewController {
     }
     
     func checkStringToNumber(_ checkString : String) -> Bool {
-        return Double(checkString) != nil ? true : false
+        return Double(checkString) != nil && Double(checkString)! > 0.0 ? true : false
     }
     
 
     @IBAction func textFieldEditingDidEnd(_ sender: HoshiTextField) {
         if sender == heightTextField || sender == weightTextField {
-            let userInputText = sender.text ?? "0"
+            let userInputText = sender.text ?? ""
             if !checkStringToNumber(userInputText) {
-                showCheckNotiAlert(title: "숫자를 입력하세요!", message: "키와 몸무게는 숫자만 입력 가능합니다😱")
+                showCheckNotiAlert(title: "숫자를 입력하세요!", message: "키와 몸무게는 1이상의 숫자만 입력 가능합니다😱")
             }
             
         }
@@ -123,7 +134,7 @@ class ProfileViewController: UIViewController {
     }
     
     func checkInputComplete() -> Bool {
-        return (nickNameTextField.text != nil && heightTextField.text != nil && weightTextField.text != nil && checkStringToNumber(heightTextField.text ?? "") && checkStringToNumber(weightTextField.text ?? ""))
+        return (nickNameTextField.text != nil && heightTextField.text != nil && weightTextField.text != nil && nickNameTextField.text != "" && checkStringToNumber(heightTextField.text ?? "") && checkStringToNumber(weightTextField.text ?? ""))
     }
     
     

@@ -103,6 +103,9 @@
                                 <state key="normal" title="물 마시기">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jKa-zI-q4U"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕하세요님의 하루 물 권장 섭취량은 2.1L 입니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgp-Ra-HJN">
                                 <rect key="frame" x="20" y="785" width="374" height="17"/>
@@ -126,6 +129,9 @@
                                                 <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="drinkTextFieldEditBeginning:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="6AS-24-UBc"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ml" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tr1-8x-GmC">
                                         <rect key="frame" x="50" y="0.0" width="26" height="20"/>
@@ -165,6 +171,9 @@
                     <navigationItem key="navigationItem" title="물 마시기" id="iQA-z4-gNG">
                         <barButtonItem key="leftBarButtonItem" title="refresh" image="arrow.clockwise" catalog="system" id="duK-Qy-adq">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="refreshItemClicked:" destination="BYZ-38-t0r" id="Am1-jb-2Ex"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="info" image="person.crop.circle" catalog="system" id="Ybq-Z0-m5e">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -178,7 +187,7 @@
                         <outlet property="discriptLabel1" destination="zcw-zt-gQU" id="2EV-dz-uN7"/>
                         <outlet property="discriptLabel2" destination="ZlO-QX-gAn" id="Wyg-QE-jfi"/>
                         <outlet property="drinkBtn" destination="sos-Gj-jOH" id="8Wy-qH-PIA"/>
-                        <outlet property="drinkWaterTextFiel" destination="axh-sl-FDv" id="jXV-4i-i0o"/>
+                        <outlet property="drinkWaterTextField" destination="axh-sl-FDv" id="LmT-EK-j4V"/>
                         <outlet property="drinkenWaterLabel" destination="O93-mg-hI3" id="Y7x-ZT-he4"/>
                         <outlet property="infoBtnItem" destination="Ybq-Z0-m5e" id="bgK-7D-a1V"/>
                         <outlet property="inputStackView" destination="P15-aC-AcA" id="dgb-Gh-tvH"/>
