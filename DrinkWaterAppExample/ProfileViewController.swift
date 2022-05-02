@@ -123,7 +123,10 @@ class ProfileViewController: UIViewController {
     
     func showCheckNotiAlert(title : String, message : String) {
         let numberAlert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        numberAlert.addAction(UIAlertAction(title: "예", style: .default, handler: nil))
+        numberAlert.addAction(UIAlertAction(title: "예", style: .default, handler: { (action) in
+            
+            self.navigationController?.popViewController(animated: true)
+        }))
         present(numberAlert, animated: true)
     }
     

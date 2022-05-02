@@ -95,7 +95,7 @@ class DrinkWaterViewController: UIViewController {
     }
     
     func setBtnUIConfig() {
-        setButtonConfig(drinkBtn, "물 마시기", .black, UIFont.systemFont(ofSize: 18, weight: .bold))
+        setButtonConfig(drinkBtn, "물 마시기💦", .black, UIFont.systemFont(ofSize: 18, weight: .bold))
     }
     
     func setDrinkWaterTextLabelConfig() {
@@ -181,8 +181,17 @@ class DrinkWaterViewController: UIViewController {
     }
 
     @IBAction func refreshItemClicked(_ sender: UIBarButtonItem) {
-        userDefault.removeObject(forKey: "drinkenWater")
-        updateDrinkState()
+        showRefreshCheckAlert("Data Reset", "데이터를 초기화하시겠습니까?")
+    }
+    
+    func showRefreshCheckAlert(_ title : String, _ message : String) {
+        let refreshAlert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        refreshAlert.addAction(UIAlertAction(title: "예", style: .default, handler: { (action) in
+            self.userDefault.removeObject(forKey: "drinkenWater")
+            self.updateDrinkState()
+        }))
+        refreshAlert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
+        present(refreshAlert, animated: true)
     }
     
     func checkStringToNumber(_ checkString : String) -> Bool {
@@ -197,7 +206,7 @@ class DrinkWaterViewController: UIViewController {
     @IBAction func saveBtnClicked(_ sender: UIButton) {
         if !checkStringToNumber(drinkWaterTextField.text ?? "") {showCheckNotiAlert(title: "숫자를 입력하세요!", message: "마신 물의 양은 숫자만 입력 가능합니다!😱"); return}
         
-        if !checkInputUserInfo() { showCheckNotiAlert(title: "정보 입력!", message: "권장량 계산을 위해 정보부터 입력해주세요!"); return}
+        if !checkInputUserInfo() { showCheckNotiInfoAlert(title: "정보 입력!", message: "권장량 계산을 위해 정보부터 입력해주세요!"); return}
         
         let userInputDrink = Int(drinkWaterTextField.text!)!
         let drinkenWater = userDefault.integer(forKey: "drinkenWater")
@@ -213,6 +222,17 @@ class DrinkWaterViewController: UIViewController {
     func showCheckNotiAlert(title : String, message : String) {
         let numberAlert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         numberAlert.addAction(UIAlertAction(title: "예", style: .default, handler: nil))
+        present(numberAlert, animated: true)
+    }
+    
+    func showCheckNotiInfoAlert(title : String, message : String) {
+        let numberAlert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        numberAlert.addAction(UIAlertAction(title: "예", style: .default, handler: { (action) in
+            
+            let profileViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewController")
+            
+            self.navigationController?.pushViewController(profileViewController!, animated: true)
+        }))
         present(numberAlert, animated: true)
     }
     

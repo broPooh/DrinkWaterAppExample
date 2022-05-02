@@ -43,7 +43,7 @@
         <!--물 마시기-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="DrinkWaterViewController" customModule="DrinkWaterAppExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DrinkWaterViewController" id="BYZ-38-t0r" customClass="DrinkWaterViewController" customModule="DrinkWaterAppExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,7 +80,7 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1-1" translatesAutoresizingMaskIntoConstraints="NO" id="9ob-nc-pId">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1-4" translatesAutoresizingMaskIntoConstraints="NO" id="9ob-nc-pId">
                                 <rect key="frame" x="87" y="328" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="0FC-jF-utQ"/>
@@ -204,8 +204,7 @@
         <!--Profile View Controller-->
         <scene sceneID="tnk-d6-lV5">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Xsj-rC-Qi4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewController id="34W-fp-tgp" customClass="ProfileViewController" customModule="DrinkWaterAppExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" id="34W-fp-tgp" customClass="ProfileViewController" customModule="DrinkWaterAppExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ev2-mz-mB6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -323,6 +322,7 @@
                         <outlet property="weightTextField" destination="2ED-MZ-t8A" id="ln0-Ex-Xgr"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xsj-rC-Qi4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1637.68115942029" y="-541.07142857142856"/>
         </scene>
@@ -339,7 +339,6 @@
         </designable>
     </designables>
     <resources>
-        <image name="1-1" width="152" height="151"/>
         <image name="1-4" width="152" height="151"/>
         <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
         <image name="person.crop.circle" catalog="system" width="128" height="121"/>
