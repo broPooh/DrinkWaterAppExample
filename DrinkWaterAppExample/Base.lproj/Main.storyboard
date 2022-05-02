@@ -88,8 +88,8 @@
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="240" id="GQH-cg-fLh"/>
                                     <constraint firstAttribute="width" secondItem="9ob-nc-pId" secondAttribute="height" multiplier="1:1" id="OON-kh-dVD"/>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="240" id="TfG-C3-y06"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="160" id="vga-Rp-nfc"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="vtY-Bg-KKK"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="140" id="vga-Rp-nfc"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="vtY-Bg-KKK"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sos-Gj-jOH">

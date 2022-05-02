@@ -134,7 +134,7 @@ class ProfileViewController: UIViewController {
     }
     
     func checkInputComplete() -> Bool {
-        return (nickNameTextField.text != nil && heightTextField.text != nil && weightTextField.text != nil && nickNameTextField.text != "" && checkStringToNumber(heightTextField.text ?? "") && checkStringToNumber(weightTextField.text ?? ""))
+        (nickNameTextField.text != nil && heightTextField.text != nil && weightTextField.text != nil && nickNameTextField.text != "" && checkStringToNumber(heightTextField.text ?? "") && checkStringToNumber(weightTextField.text ?? ""))
     }
     
     
@@ -155,6 +155,6 @@ class ProfileViewController: UIViewController {
     }
     
     func calculateRecommendAmout(height : Double, weight : Double) -> Double {
-        return (height + weight) / 100
+        (height + weight) / 100
     }
 }

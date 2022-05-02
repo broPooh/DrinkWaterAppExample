@@ -188,8 +188,7 @@ class DrinkWaterViewController: UIViewController {
     }
     
     func checkStringToNumber(_ checkString : String) -> Bool {
-        return Int(checkString) != nil && Int(checkString)! > 0 ? true : false
-
+         Int(checkString) != nil && Int(checkString)! > 0 ? true : false
     }
     
         
@@ -223,12 +222,14 @@ class DrinkWaterViewController: UIViewController {
         saveLastTime()
     }
     
+    //마지막 시간을 저장
     func saveLastTime() {
         let now = dateToStringFormat.string(from: Date())
         let finalTime = UserDefaults.standard.string(forKey: "finalTime") ?? now
         
         if now > finalTime { UserDefaults.standard.set(now, forKey: "finalTime") }
     }
+    
     
     func checkTodayStart() {
         let now = dateToStringFormat.string(from: Date())
@@ -245,6 +246,5 @@ class DrinkWaterViewController: UIViewController {
     @IBAction func drinkTextFieldEditBeginning(_ sender: UITextField) {
         let position = sender.endOfDocument
         sender.selectedTextRange = sender.textRange(from:position, to:position)
-
     }
 }
