@@ -22,11 +22,14 @@ enum PlantsImagePercent : Int {
 class DrinkWaterViewController: UIViewController {
 
     
-    @IBOutlet var discriptLabel1: UILabel!
-    @IBOutlet var discriptLabel2: UILabel!
+    //description이다
+    @IBOutlet var descriptLabel1: UILabel!
+    @IBOutlet var descriptLabel2: UILabel!
     @IBOutlet var drinkenWaterLabel: UILabel!
     @IBOutlet var dayWaterPercentLabel: UILabel!
 
+    //Interface Builder
+    //@ 어노테이션Annotation
     @IBOutlet var plantsImageView: UIImageView!
     @IBOutlet var mlLabel: UILabel!
     
@@ -40,20 +43,34 @@ class DrinkWaterViewController: UIViewController {
     @IBOutlet var drinkWaterTextField: UITextField!
     
     // backgroundColor
-    let backgroundGreenColor: UIColor = UIColor(red: 0, green: 151/255, blue: 111/255, alpha: 1.0)
+    // 명시할 때는 Type Annotation
+    // 축약이 가능한 이유 타입 추론
+    let backgroundGreenColor = UIColor(red: 0, green: 151/255, blue: 111/255, alpha: 1.0)
     let userDefault = UserDefaults.standard
     let dateToStringFormat = DateFormatter()
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        checkTodayStart()
+        updateDrinkState()
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        initUIConfig()
+        configureView()
         updateDrinkState()
         dateToStringFormat.dateFormat = "yyyy:MM:dd"
     }
     
-    func initUIConfig() {
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        saveLastTime()
+    }
+    
+    func configureView() {
         setBackgroundColor()
         setNavigationConfig()
         setDiscriptLabelConfig()
@@ -77,15 +94,17 @@ class DrinkWaterViewController: UIViewController {
         appearance.backgroundColor = backgroundGreenColor //백그라운드 색상 변경
         appearance.configureWithOpaqueBackground() // 투명제거
         appearance.titleTextAttributes = [.foregroundColor: UIColor.white] //title color 변경
+        
         navigationBar.tintColor = UIColor.white //Bar Item color 변경
         navigationBar.standardAppearance = appearance
         navigationBar.scrollEdgeAppearance = appearance
+        
     }
     
     
     func setDiscriptLabelConfig() {
-        setLabelConfig(discriptLabel1, "잘하셨어요!", UIColor.white, .center, UIFont.systemFont(ofSize: 24, weight: .semibold))
-        setLabelConfig(discriptLabel2, "오늘 마신 양은", UIColor.white, .center, UIFont.systemFont(ofSize: 24, weight: .regular))
+        setLabelConfig(descriptLabel1, "잘하셨어요!", UIColor.white, .center, UIFont.systemFont(ofSize: 24, weight: .semibold))
+        setLabelConfig(descriptLabel2, "오늘 마신 양은", UIColor.white, .center, UIFont.systemFont(ofSize: 24, weight: .regular))
         setLabelConfig(drinkenWaterLabel, "1200ml", UIColor.white, .center, UIFont.systemFont(ofSize: 32, weight: .bold))
         setLabelConfig(dayWaterPercentLabel, "목표의 30%", UIColor.white, .center, UIFont.systemFont(ofSize: 17, weight: .regular))
     }
@@ -95,13 +114,14 @@ class DrinkWaterViewController: UIViewController {
     }
     
     func setBtnUIConfig() {
+        
         setButtonConfig(drinkBtn, "물 마시기💦", .black, UIFont.systemFont(ofSize: 18, weight: .bold))
     }
     
     func setDrinkWaterTextLabelConfig() {
-        setTextFieldConfig(drinkWaterTextField, .white, placeHolder: NSAttributedString(string: "200", attributes: [.foregroundColor : UIColor.lightGray]))
+        setTextFieldConfig(drinkWaterTextField, .white, placeHolder: NSAttributedString(string: "200", attributes: [.foregroundColor: UIColor.lightGray]))
     }
-    
+    //매개변수, return, 가변 매개변수.
     func setLabelConfig(_ label : UILabel, _ text : String, _ textColor : UIColor, _ textAlignment : NSTextAlignment,_ font : UIFont) {
         label.text = text
         label.textColor = textColor
@@ -109,13 +129,13 @@ class DrinkWaterViewController: UIViewController {
         label.font = font
     }
     
-    func setButtonConfig(_ button : UIButton, _ text : String, _ textColor : UIColor, _ font : UIFont) {
+    func setButtonConfig(_ button: UIButton, _ text : String, _ textColor : UIColor, _ font : UIFont) {
         button.setTitle(text, for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.titleLabel?.font = font
     }
     
-    func setTextFieldConfig(_ textField : UITextField, _ textColor : UIColor, placeHolder : NSAttributedString) {
+    func setTextFieldConfig(_ textField: UITextField, _ textColor : UIColor, placeHolder : NSAttributedString) {
         textField.keyboardType = UIKeyboardType.numberPad
         textField.attributedPlaceholder = placeHolder
         textField.textColor = textColor
@@ -163,7 +183,7 @@ class DrinkWaterViewController: UIViewController {
         plantsImageView.image = UIImage(named: "1-\(plantsLevel)")
     }
     
-    func calculateDrinkPerecent(_ drinkenWater : Int?, _ recommendAmount : Double?) -> Int{
+    func calculateDrinkPerecent(_ drinkenWater: Int?, _ recommendAmount: Double?) -> Int {
         if (drinkenWater == nil || recommendAmount == nil || drinkenWater == 0 || recommendAmount == 0.0) { return 0 }
         return Int(Double(drinkenWater!) / (recommendAmount! * 1000) * 100)
     }
@@ -180,11 +200,14 @@ class DrinkWaterViewController: UIViewController {
         recommandAmountLabel.text = "\(nickName)님의 하루 물 권장 섭취량은 \(recommendAmount)입니다"
     }
 
-    @IBAction func refreshItemClicked(_ sender: UIBarButtonItem) {
+    //Any로 연결 후 UIBarButtonItem으로 변경했을때 해보고
+    //UIBarButtonItem으로 연결후 Any로 바꿨을때 어떤일이 일어나는지?
+    @IBAction func refreshItemClicked(_ button: UIBarButtonItem) {
         showRefreshCheckAlert("Data Reset", "데이터를 초기화하시겠습니까?")
     }
     
-    func showRefreshCheckAlert(_ title : String, _ message : String) {
+    
+    func showRefreshCheckAlert(_ title: String, _ message: String) {
         let refreshAlert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         refreshAlert.addAction(UIAlertAction(title: "예", style: .default, handler: { (action) in
             self.userDefault.removeObject(forKey: "drinkenWater")
@@ -198,6 +221,7 @@ class DrinkWaterViewController: UIViewController {
          Int(checkString) != nil && Int(checkString)! > 0 ? true : false
     }
     
+    //Return 생략가능 swift 5.1버전?
     func checkInputUserInfo() -> Bool {
         (userDefault.string(forKey: "nickName") != nil && userDefault.integer(forKey: "height") != 0 && userDefault.integer(forKey: "weight") != 0 && userDefault.double(forKey: "recommendAmount") != 0.0)
     }
@@ -234,16 +258,6 @@ class DrinkWaterViewController: UIViewController {
             self.navigationController?.pushViewController(profileViewController!, animated: true)
         }))
         present(numberAlert, animated: true)
-    }
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        checkTodayStart()
-        updateDrinkState()
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        saveLastTime()
     }
     
     //마지막 시간을 저장
@@ -295,4 +309,17 @@ extension Date {
         dateToStringFormat.dateFormat = "yyyy:MM:dd"
         return dateToStringFormat.string(from: self)
     }
+}
+
+//열거형과 스트럭트를
+//값이 변경될 여지가 없다.
+//데이터 타입을 명시하지 않으면, 케이스가 rawValue가 된다.
+enum UserDefaultsKey: String {
+    case nickname
+}
+
+//스트럭트로 하면 인스턴스를 만들 수 있지만, 우리는 인스턴스를 만들 필요가 없다.
+//불필요하게 인스턴스를 생성하면 값이 변경될 여지가 있다
+struct UDKey {
+    let nickname = "nickname"
 }

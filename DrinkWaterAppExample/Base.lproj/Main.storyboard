@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6vG-L5-UEY">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -81,15 +82,9 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1-4" translatesAutoresizingMaskIntoConstraints="NO" id="9ob-nc-pId">
-                                <rect key="frame" x="87" y="328" width="240" height="240"/>
+                                <rect key="frame" x="103.5" y="344.5" width="207" height="207"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="240" id="0FC-jF-utQ"/>
-                                    <constraint firstAttribute="width" constant="240" id="FK8-Os-sb8"/>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="240" id="GQH-cg-fLh"/>
                                     <constraint firstAttribute="width" secondItem="9ob-nc-pId" secondAttribute="height" multiplier="1:1" id="OON-kh-dVD"/>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="240" id="TfG-C3-y06"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="140" id="vga-Rp-nfc"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="vtY-Bg-KKK"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sos-Gj-jOH">
@@ -114,7 +109,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="P15-aC-AcA">
-                                <rect key="frame" x="169" y="598" width="76" height="20"/>
+                                <rect key="frame" x="169" y="581.5" width="76" height="20"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="500" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="axh-sl-FDv">
                                         <rect key="frame" x="0.0" y="0.0" width="46" height="20"/>
@@ -155,6 +150,7 @@
                         <constraints>
                             <constraint firstItem="9ob-nc-pId" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8kB-vu-84Q"/>
                             <constraint firstItem="P15-aC-AcA" firstAttribute="top" secondItem="9ob-nc-pId" secondAttribute="bottom" constant="30" id="RmI-bt-8gt"/>
+                            <constraint firstItem="9ob-nc-pId" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="SYw-IX-bvQ"/>
                             <constraint firstItem="bgp-Ra-HJN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V5Q-6i-Oon"/>
                             <constraint firstItem="sos-Gj-jOH" firstAttribute="top" secondItem="bgp-Ra-HJN" secondAttribute="bottom" constant="10" id="WaC-i9-IaQ"/>
                             <constraint firstItem="sos-Gj-jOH" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="amS-bR-g99"/>
@@ -172,7 +168,7 @@
                         <barButtonItem key="leftBarButtonItem" title="refresh" image="arrow.clockwise" catalog="system" id="duK-Qy-adq">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="refreshItemClicked:" destination="BYZ-38-t0r" id="Am1-jb-2Ex"/>
+                                <action selector="refreshItemClicked:" destination="BYZ-38-t0r" id="Yk6-pb-qK8"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="info" image="person.crop.circle" catalog="system" id="Ybq-Z0-m5e">
@@ -184,8 +180,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="dayWaterPercentLabel" destination="uso-SC-Ykk" id="fhd-mq-7Xr"/>
-                        <outlet property="discriptLabel1" destination="zcw-zt-gQU" id="2EV-dz-uN7"/>
-                        <outlet property="discriptLabel2" destination="ZlO-QX-gAn" id="Wyg-QE-jfi"/>
+                        <outlet property="descriptLabel1" destination="zcw-zt-gQU" id="8hN-YJ-Z9L"/>
+                        <outlet property="descriptLabel2" destination="ZlO-QX-gAn" id="QJG-Q9-Vbc"/>
                         <outlet property="drinkBtn" destination="sos-Gj-jOH" id="8Wy-qH-PIA"/>
                         <outlet property="drinkWaterTextField" destination="axh-sl-FDv" id="LmT-EK-j4V"/>
                         <outlet property="drinkenWaterLabel" destination="O93-mg-hI3" id="Y7x-ZT-he4"/>

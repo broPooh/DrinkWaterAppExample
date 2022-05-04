@@ -85,7 +85,7 @@ class ProfileViewController: UIViewController {
         setHosiTextFieldConfig(hosiTextField: weightTextField, placeholder: "몸무게(kg)를 설정해주세요", keyboardType: .decimalPad)
     }
     
-    func setHosiTextFieldConfig(hosiTextField : HoshiTextField, placeholder : String, keyboardType : UIKeyboardType) {
+    func setHosiTextFieldConfig(hosiTextField: HoshiTextField, placeholder: String, keyboardType: UIKeyboardType) {
         
         hosiTextField.placeholder = placeholder
         hosiTextField.placeholderFontScale = 0.8
@@ -99,13 +99,13 @@ class ProfileViewController: UIViewController {
     
     
     
-    func showNumberCheckNotiAlert(title : String, message : String) {
+    func showNumberCheckNotiAlert(title: String, message: String) {
         let numberAlert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         numberAlert.addAction(UIAlertAction(title: "예", style: .default, handler: nil))
         present(numberAlert, animated: true)
     }
     
-    func checkStringToNumber(_ checkString : String) -> Bool {
+    func checkStringToNumber(_ checkString: String) -> Bool {
         return Double(checkString) != nil && Double(checkString)! > 0.0 ? true : false
     }
     
@@ -121,10 +121,9 @@ class ProfileViewController: UIViewController {
     }
     
     
-    func showCheckNotiAlert(title : String, message : String) {
+    func showCheckNotiAlert(title: String, message: String) {
         let numberAlert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         numberAlert.addAction(UIAlertAction(title: "예", style: .default, handler: { (action) in
-            
             self.navigationController?.popViewController(animated: true)
         }))
         present(numberAlert, animated: true)
@@ -143,7 +142,7 @@ class ProfileViewController: UIViewController {
     
     
     func saveUserInfo() {
-        if !checkInputComplete() {showCheckNotiAlert(title: "입력 오류!", message: "입력하신 값을 재확인하세요"); return }
+        if !checkInputComplete() { showCheckNotiAlert(title: "입력 오류!", message: "입력하신 값을 재확인하세요"); return }
         
         let nickName = nickNameTextField.text!
         let height = Double(heightTextField.text!)!
@@ -158,7 +157,7 @@ class ProfileViewController: UIViewController {
         showCheckNotiAlert(title: "저장 성공!", message: "입력하신 정보를 저장하였습니다! 😆")
     }
     
-    func calculateRecommendAmout(height : Double, weight : Double) -> Double {
+    func calculateRecommendAmout(height: Double, weight: Double) -> Double {
         (height + weight) / 100
     }
 }
